@@ -7,7 +7,7 @@
 
 
 
-<title>解决hexo部署时需要重新部署cname文件的问题 | we1x4n&#39;s blog</title>
+<title>利用cdn加速cod战区下载(适用github加速) | we1x4n&#39;s blog</title>
 
 
 
@@ -103,11 +103,73 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">解决hexo部署时需要重新部署cname文件的问题</h1>
+            <h1 class="post-title">利用cdn加速cod战区下载(适用github加速)</h1>
             
                 <div class="post-meta">
                     
@@ -116,7 +178,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">March 17, 2020&nbsp;&nbsp;23:07:26</a>
+                        Date: <a href="#">March 18, 2020&nbsp;&nbsp;18:50:33</a>
                         </span>
                     
                     
@@ -125,7 +187,24 @@
         </header>
 
         <div class="post-content">
-            <p>网上的解决方案都是在<code>source</code>文件夹内添加<code>CNAME</code>文件，在实际修改中，应该在<code>themes</code>文件夹对应的主题的<code>source</code>文件夹内添加<code>CNAME</code>文件<br><img src="//we1x4n.com/2020/03/17/解决hexo部署时需要重新部署cname文件的问题/1.png" alt></p>
+            <p>最近准备玩cod战区，但是下载发现速度很慢，我发现了一个可以利用cdn加速下载方式。这个工具同理支持通过cdn加速github的访问。</p>
+<hr>
+<blockquote>
+<p>下载地址：</p>
+</blockquote>
+<p><a href="https://www.dogfight360.com/blog/475/" target="_blank" rel="noopener">cdn以及hosts修改工具</a></p>
+<p><a href="https://www.dogfight360.com/blog/1042/" target="_blank" rel="noopener">cdn重定向工具</a></p>
+<hr>
+<blockquote>
+<p>使用方法：</p>
+</blockquote>
+<p>现在打开<code>UsbEAm Hosts Editor</code>，在左下角选择战网<code>Battle.net-暴雪战网</code>，然后选择<code>战网下载（国际服） - cdnworks</code></p>
+<p><img src="//we1x4n.com/2020/03/18/利用cdn加速cod战区下载(适用github加速)/1.png" alt><br>点击<code>检测延迟</code>选择第一个延迟最低的ip点击<code>应用选中</code><br><img src="//we1x4n.com/2020/03/18/利用cdn加速cod战区下载(适用github加速)/2.png" alt><br>然后打开<code>战网下载cdn重定向</code>，选择<code>cdnworks</code>，点击启动重定向然后启动战网就行了<br><img src="//we1x4n.com/2020/03/18/利用cdn加速cod战区下载(适用github加速)/3.png" alt></p>
+<h3 id="最后总结一下：先测速，然后修改hosts，接着重定向，最后开车下载"><a href="#最后总结一下：先测速，然后修改hosts，接着重定向，最后开车下载" class="headerlink" title="最后总结一下：先测速，然后修改hosts，接着重定向，最后开车下载"></a>最后总结一下：先测速，然后修改hosts，接着重定向，最后开车下载</h3><hr>
+<blockquote>
+<p>使用方法：</p>
+</blockquote>
+<p>在<code>UsbEAm Hosts Editor</code>，左下角找到github，同理可以加速github</p>
 
         </div>
 
@@ -140,7 +219,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://we1x4n.com/2020/03/17/解决hexo部署时需要重新部署cname文件的问题/">https://we1x4n.com/2020/03/17/解决hexo部署时需要重新部署cname文件的问题/</a></span>
+                        <span><a href="https://we1x4n.com/2020/03/18/利用cdn加速cod战区下载(适用github加速)/">https://we1x4n.com/2020/03/18/利用cdn加速cod战区下载(适用github加速)/</a></span>
                     </p>
                 
                 
@@ -167,10 +246,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/03/18/利用cdn加速cod战区下载(适用github加速)/">利用cdn加速cod战区下载(适用github加速)</a>
             
-            
-            <a class="next" rel="next" href="/2019/07/19/windows-wifi-crack/">Wi-Fi暴力破解（非原创）</a>
+            <a class="next" rel="next" href="/2020/03/17/解决hexo部署时需要重新部署cname文件的问题/">解决hexo部署时需要重新部署cname文件的问题</a>
             
         </section>
 
